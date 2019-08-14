@@ -1,4 +1,3 @@
-const path = require('path');
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
@@ -35,7 +34,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('model.js'),
-      this.destinationPath(path.join('models', `${name}.js`)),
+      this.destinationPath('models', `${name}.js`),
       { name, attributes },
     );
   }

@@ -1,4 +1,3 @@
-const path = require('path');
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
@@ -16,7 +15,7 @@ module.exports = class extends Generator {
     });
   }
 
-  end() {
-    this.fs.delete(this.destinationPath(path.join('models', `${this.options.name}.js`)));
+  writting() {
+    this.fs.delete(this.destinationPath('models', `${this.options.name}.js`));
   }
 };
