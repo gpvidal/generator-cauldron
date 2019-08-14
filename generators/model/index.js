@@ -26,7 +26,7 @@ module.exports = class extends Generator {
         require.resolve('./create'),
         { arguments: this.args },
       );
-    } else if (this.options.delete) {
+    } else if (this.options.destroy) {
       this.composeWith(
         require.resolve('./destroy'),
         { arguments: this.args },
