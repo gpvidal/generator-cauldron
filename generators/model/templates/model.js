@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const <%= name %> = sequelize.define('<%= name %>', {
-    <%_ attributes.forEach(function(attribute, index) { _%>
+    <%_ attributes.forEach((attribute, index) => { _%>
     <%= attribute.fieldName %>: DataTypes.<%= attribute.dataType.toUpperCase() %>,
     <%_ }) _%>
   }, {});
