@@ -21,6 +21,7 @@ describe('iic2513:migration', () => {
 
       const [migrationFilename] = readFilesFromMigrationsFolder(runDirectory);
       assert.file(path.join(runDirectory, 'migrations', migrationFilename));
+      return expect(migrationFilename.includes(`-${migrationName}.js`)).to.be.true;
     });
   });
 
