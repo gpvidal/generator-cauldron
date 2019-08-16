@@ -4,9 +4,9 @@
   "description": "Generator",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./generators",
-    "lint-fix": "eslint --fix ./generators",
-    "test": "mocha ./generators/*/*.test.js"
+    "lint": "eslint ./generators ./helpers",
+    "lint-fix": "eslint --fix ./generators .helpers",
+    "test": "nyc mocha ./generators/*/*.test.js ./helpers/**/*.test.js"
   },
   "files": [
     "generators"
@@ -15,15 +15,18 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "pluralize": "^8.0.0",
     "yeoman-generator": "^4.0.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-mocha": "^6.0.0",
     "fast-glob": "^3.0.4",
     "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
     "sinon": "^7.4.1",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^2.0.0"
