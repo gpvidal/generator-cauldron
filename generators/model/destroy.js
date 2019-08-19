@@ -17,5 +17,10 @@ module.exports = class extends Generator {
 
   writting() {
     this.fs.delete(this.destinationPath('src', 'models', `${this.options.name}.js`));
+
+    this.composeWith(
+      require.resolve('../migration/destroy'),
+      this.options,
+    );
   }
 };
