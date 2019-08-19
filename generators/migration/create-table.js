@@ -37,7 +37,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('create-table.js'),
-      this.destinationPath('migrations', `${dateString}-create-${name}.js`),
+      this.destinationPath('src', 'migrations', `${dateString}-create-${name}.js`),
       { attributes, tableName: pluralize(name) },
     );
   }

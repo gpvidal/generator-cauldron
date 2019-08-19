@@ -9,7 +9,7 @@ describe('iic2513:migration', () => {
   const migrationName = 'test-migration';
 
   function readFilesFromMigrationsFolder(runDirectory) {
-    const migrationsDirectory = path.join(runDirectory, 'migrations');
+    const migrationsDirectory = path.join(runDirectory, 'src', 'migrations');
     return fs.readdirSync(migrationsDirectory);
   }
 
@@ -20,7 +20,7 @@ describe('iic2513:migration', () => {
         .withArguments([migrationName]);
 
       const [migrationFilename] = readFilesFromMigrationsFolder(runDirectory);
-      assert.file(path.join(runDirectory, 'migrations', migrationFilename));
+      assert.file(path.join(runDirectory, 'src', 'migrations', migrationFilename));
       return expect(migrationFilename.includes(`-${migrationName}.js`)).to.be.true;
     });
   });
@@ -43,7 +43,7 @@ describe('iic2513:migration', () => {
         .withOptions({ destroy: true })
         .withArguments([migrationName]);
 
-      assert.noFile(path.join(runDirectory, 'migrations', migrationFilename));
+      assert.noFile(path.join(runDirectory, 'src', 'migrations', migrationFilename));
     });
   });
 
@@ -61,7 +61,7 @@ describe('iic2513:migration', () => {
           .withArguments([modelName, `${modelAttribute.name}:${modelAttribute.type}`]);
 
         [migrationFilename] = readFilesFromMigrationsFolder(runDirectory);
-        migrationPath = path.join(runDirectory, 'migrations', migrationFilename);
+        migrationPath = path.join(runDirectory, 'src', 'migrations', migrationFilename);
       });
 
       it('generates migration file', () => {
@@ -97,7 +97,7 @@ describe('iic2513:migration', () => {
           .withArguments([modelName, attributes]);
 
         [migrationFilename] = readFilesFromMigrationsFolder(runDirectory);
-        migrationPath = path.join(runDirectory, 'migrations', migrationFilename);
+        migrationPath = path.join(runDirectory, 'src', 'migrations', migrationFilename);
       });
 
       it('generates migration file', () => {

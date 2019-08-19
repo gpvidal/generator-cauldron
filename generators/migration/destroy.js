@@ -16,6 +16,6 @@ module.exports = class extends Generator {
   }
 
   writting() {
-    this.fs.delete(this.destinationPath('migrations', `*-${this.options.name}.js`));
+    this.fs.delete(this.destinationPath('src', 'migrations', `*-${this.options.name}.js`));
   }
 };
