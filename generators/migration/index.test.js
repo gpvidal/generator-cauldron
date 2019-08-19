@@ -118,4 +118,9 @@ describe('iic2513:migration', () => {
       ));
     });
   });
+
+  context('when an invalid option is specified', () => {
+    it('shows an error', () => assert.rejects(() => helpers.run(__dirname)
+      .withOptions({ noValidOperation: true })));
+  });
 });

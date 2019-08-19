@@ -43,6 +43,8 @@ module.exports = class extends Generator {
         require.resolve('./create-table'),
         { arguments: this.args },
       );
+    } else {
+      this.env.error('You must specify a valid action');
     }
   }
 };
