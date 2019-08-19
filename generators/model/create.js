@@ -37,5 +37,10 @@ module.exports = class extends Generator {
       this.destinationPath('src', 'models', `${name}.js`),
       { name, attributes },
     );
+
+    this.composeWith(
+      require.resolve('../migration/create-table'),
+      { ...this.options, createTable: true },
+    );
   }
 };
