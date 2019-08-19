@@ -8,7 +8,7 @@ describe('iic2513:seed', () => {
   const seedName = 'test-seed';
 
   function readFilesFromSeedsFolder(runDirectory) {
-    const seedsDirectory = path.join(runDirectory, 'seeds');
+    const seedsDirectory = path.join(runDirectory, 'src', 'seeds');
     return fs.readdirSync(seedsDirectory);
   }
 
@@ -19,7 +19,7 @@ describe('iic2513:seed', () => {
         .withArguments([seedName]);
 
       const [seedFilename] = readFilesFromSeedsFolder(runDirectory);
-      assert.file(path.join(runDirectory, 'seeds', seedFilename));
+      assert.file(path.join(runDirectory, 'src', 'seeds', seedFilename));
       return expect(seedFilename.includes(`-${seedName}.js`)).to.be.true;
     });
   });
@@ -42,7 +42,7 @@ describe('iic2513:seed', () => {
         .withOptions({ destroy: true })
         .withArguments([seedName]);
 
-      return assert.noFile(path.join(runDirectory, 'seeds', seedFilename));
+      return assert.noFile(path.join(runDirectory, 'src', 'seeds', seedFilename));
     });
   });
 

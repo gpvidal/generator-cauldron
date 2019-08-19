@@ -21,7 +21,7 @@ module.exports = class extends Generator {
     const dateString = getCurrentYYYYMMDDHHmmsString();
     this.fs.copy(
       this.templatePath('skeleton.js'),
-      this.destinationPath('seeds', `${dateString}-${name}.js`),
+      this.destinationPath('src', 'seeds', `${dateString}-${name}.js`),
     );
   }
 };
