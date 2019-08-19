@@ -8,6 +8,7 @@ module.exports = function babelConfig(api) {
       },
       modules: false,
       useBuiltIns: 'usage',
+      corejs: 3,
     }],
     ['@babel/preset-react', {
       development: babelEnv === 'development',
@@ -18,4 +19,4 @@ module.exports = function babelConfig(api) {
     'react-hot-loader/babel',
   ];
   return { presets, plugins };
-}
+};
