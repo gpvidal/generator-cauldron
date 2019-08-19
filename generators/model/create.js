@@ -34,7 +34,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('model.js'),
-      this.destinationPath('models', `${name}.js`),
+      this.destinationPath('src', 'models', `${name}.js`),
       { name, attributes },
     );
   }

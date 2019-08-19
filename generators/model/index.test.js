@@ -15,15 +15,15 @@ describe('iic2513:model', () => {
           .withArguments([modelName, `${modelAttribute.name}:${modelAttribute.type}`]);
       });
 
-      it('generates model file', () => assert.file(path.join(runDirectory, 'models', `${modelName}.js`)));
+      it('generates model file', () => assert.file(path.join(runDirectory, 'src', 'models', `${modelName}.js`)));
 
       it('generates model with model name', () => assert.fileContent(
-        path.join(runDirectory, 'models', `${modelName}.js`),
+        path.join(runDirectory, 'src', 'models', `${modelName}.js`),
         `return ${modelName};`,
       ));
 
       it('generates model with attribute', () => assert.fileContent(
-        path.join(runDirectory, 'models', `${modelName}.js`),
+        path.join(runDirectory, 'src', 'models', `${modelName}.js`),
         `${modelAttribute.name}: DataTypes.${modelAttribute.type.toUpperCase()},`,
       ));
     });
@@ -43,16 +43,16 @@ describe('iic2513:model', () => {
           .withArguments([modelName, attributes]);
       });
 
-      it('generates model file', () => assert.file(path.join(runDirectory, 'models', `${modelName}.js`)));
+      it('generates model file', () => assert.file(path.join(runDirectory, 'src', 'models', `${modelName}.js`)));
 
       it('generates model with model name', () => assert.fileContent(
-        path.join(runDirectory, 'models', `${modelName}.js`),
+        path.join(runDirectory, 'src', 'models', `${modelName}.js`),
         `return ${modelName};`,
       ));
 
       it('generates model with attributes', () => modelAttributes.every(
         ({ name, type }) => assert.fileContent(
-          path.join(runDirectory, 'models', `${modelName}.js`),
+          path.join(runDirectory, 'src', 'models', `${modelName}.js`),
           `${name}: DataTypes.${type.toUpperCase()},`,
         ),
       ));
@@ -75,7 +75,7 @@ describe('iic2513:model', () => {
         .withOptions({ destroy: true })
         .withArguments([modelName]);
 
-      return assert.noFile(path.join(runDirectory, 'models', `${modelName}.js`));
+      return assert.noFile(path.join(runDirectory, 'src', 'models', `${modelName}.js`));
     });
   });
 

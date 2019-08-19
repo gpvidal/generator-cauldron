@@ -16,6 +16,6 @@ module.exports = class extends Generator {
   }
 
   writting() {
-    this.fs.delete(this.destinationPath('models', `${this.options.name}.js`));
+    this.fs.delete(this.destinationPath('src', 'models', `${this.options.name}.js`));
   }
 };
