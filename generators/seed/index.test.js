@@ -45,4 +45,9 @@ describe('iic2513:seed', () => {
       return assert.noFile(path.join(runDirectory, 'seeds', seedFilename));
     });
   });
+
+  context('when an invalid option is specified', () => {
+    it('shows an error', () => assert.rejects(() => helpers.run(__dirname)
+      .withOptions({ noValidOperation: true })));
+  });
 });

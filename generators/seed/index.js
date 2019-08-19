@@ -31,6 +31,8 @@ module.exports = class extends Generator {
         require.resolve('./destroy'),
         { arguments: this.args },
       );
+    } else {
+      this.env.error('You must specify a valid action');
     }
   }
 };
