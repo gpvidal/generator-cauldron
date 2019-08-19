@@ -78,4 +78,9 @@ describe('iic2513:model', () => {
       return assert.noFile(path.join(runDirectory, 'models', `${modelName}.js`));
     });
   });
+
+  context('when an invalid option is specified', () => {
+    it('shows an error', () => assert.rejects(() => helpers.run(__dirname)
+      .withOptions({ noValidOperation: true })));
+  });
 });
