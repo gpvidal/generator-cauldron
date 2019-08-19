@@ -1,11 +1,16 @@
 const assert = require('yeoman-assert');
 const fs = require('fs');
+const sinon = require('sinon');
 const helpers = require('yeoman-test');
 const path = require('path');
 
 describe('iic2513:app', () => {
   const projectName = 'test-project';
   let installStepCalled = false;
+
+  before(() => { sinon.stub(console, 'log').returns(); });
+  // eslint-disable-next-line no-console
+  after(() => console.log.restore());
 
   beforeEach(() => { installStepCalled = false; });
 
