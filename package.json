@@ -1,8 +1,12 @@
 {
   "name": "generator-iic2513",
   "version": "0.1.0",
-  "description": "Generator",
+  "description": "Project template generator for IIC2513 course at Pontificia Universidad Catolica de Chile",
   "license": "MIT",
+  "author": {
+    "name": "Gabriel Vidal",
+    "email": "gpvidal@uc.cl"
+  },
   "scripts": {
     "lint": "eslint ./generators ./helpers",
     "lint-fix": "eslint --fix ./generators .helpers",
@@ -12,6 +16,11 @@
     "generators"
   ],
   "keywords": [
+    "ejs",
+    "koa",
+    "node",
+    "react",
+    "sequelize",
     "yeoman-generator"
   ],
   "dependencies": {
@@ -20,11 +29,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-mocha": "^6.0.0",
-    "fast-glob": "^3.0.4",
+    "eslint-plugin-mocha": "^6.1.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
     "sinon": "^7.4.1",
