@@ -1,6 +1,6 @@
 const path = require('path');
 const Generator = require('yeoman-generator');
-const { INITIAL_MESSAGE } = require('../../lib/messages');
+const { INITIAL_MESSAGE, FINAL_MESSAGE } = require('../../lib/messages');
 const { empty } = require('../../helpers/validation');
 
 module.exports = class extends Generator {
@@ -60,6 +60,6 @@ module.exports = class extends Generator {
   // eslint-disable-next-line class-methods-use-this
   end() {
     // eslint-disable-next-line no-console
-    console.log('Enjoy! :)');
+    console.log(FINAL_MESSAGE);
   }
 };
