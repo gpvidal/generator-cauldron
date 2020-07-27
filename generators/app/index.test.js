@@ -7,12 +7,16 @@ const path = require('path');
 describe('@iic2513/template:app', () => {
   const projectName = 'test-project';
   let installStepCalled = false;
+  let dockerStepCalled = false;
 
   before(() => { sinon.stub(console, 'log').returns(); });
   // eslint-disable-next-line no-console
   after(() => console.log.restore());
 
-  beforeEach(() => { installStepCalled = false; });
+  beforeEach(() => {
+    installStepCalled = false;
+    dockerStepCalled = false;
+  });
 
   context('when project name is an argument', () => {
     context('when dependencies must be installed after setup', () => {
@@ -56,6 +60,20 @@ describe('@iic2513/template:app', () => {
         }));
 
       it('does not install dependencies', () => !installStepCalled);
+    });
+
+    context('when docker options is selected', () => {
+      it('generates all docker files', () => helpers.run(__dirname)
+        .withArguments(projectName)
+        .withOptions({ docker: true })
+        .withPrompts({ installDependencies: false })
+        .then((directory) => {
+          dockerStepCalled = fs.existsSync(path.join(directory, 'Dockerfile'));
+          const fileList = fs.readdirSync(path.join(__dirname, 'docker'));
+          assert.file(fileList);
+        }));
+
+      it('does not generate docker files', () => !dockerStepCalled);
     });
   });
 
@@ -110,6 +128,20 @@ describe('@iic2513/template:app', () => {
           }));
 
         it('does not install dependencies', () => !installStepCalled);
+      });
+
+      context('when docker options is selected', () => {
+        it('generates all docker files', () => helpers.run(__dirname)
+          .withArguments(projectName)
+          .withOptions({ docker: true })
+          .withPrompts({ installDependencies: false, projectName })
+          .then((directory) => {
+            dockerStepCalled = fs.existsSync(path.join(directory, 'Dockerfile'));
+            const fileList = fs.readdirSync(path.join(__dirname, 'docker'));
+            assert.file(fileList);
+          }));
+
+        it('does not generate docker files', () => !dockerStepCalled);
       });
     });
   });

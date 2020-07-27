@@ -14,6 +14,8 @@ module.exports = class extends Generator {
     });
 
     this.option('installDependencies');
+
+    this.option('docker');
   }
 
   async prompting() {
@@ -32,7 +34,7 @@ module.exports = class extends Generator {
         type: 'confirm',
         name: 'installDependencies',
         message: 'Would you like install dependencies after setup?',
-        when: () => !this.options.installDependencies,
+        when: () => !this.options.installDependencies && !this.options.docker,
       },
     ]);
   }
@@ -50,6 +52,12 @@ module.exports = class extends Generator {
       this.destinationPath(),
       { globOptions: { dot: true } },
     );
+
+    if (this.options.docker) {
+      this.fs.copy(this.templatePath('../docker/'), this.destinationPath(), {
+        globOptions: { dot: true },
+      });
+    }
 
     this.fs.extendJSON(this.destinationPath('package.json'), { name: this.projectName });
   }
