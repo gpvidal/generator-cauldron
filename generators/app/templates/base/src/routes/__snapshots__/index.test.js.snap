@@ -6,7 +6,7 @@ exports[`GET / responds correctly 1`] = `
 
   <head>
     <meta charset=\\"utf-8\\">
-    <title>IIC2513 - CHANGE-ME</title>
+    <title>Cauldron - CHANGE-ME</title>
     
       <link rel=\\"stylesheet\\" href=\\"/assets/app.css\\">
     
