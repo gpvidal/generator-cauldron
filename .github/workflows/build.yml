@@ -108,7 +108,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_DB: iic2513template_test
+          POSTGRES_DB: cauldron_test
           POSTGRES_PASSWORD: postgres
 
         options: >-
