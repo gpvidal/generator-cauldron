@@ -85,7 +85,7 @@ jobs:
 
     - name: Create project
       working-directory: ../
-      run: yo @iic2513/template my-project --installDependencies
+      run: yo cauldron my-project --installDependencies
 
     - name: Run linter
       working-directory: ../my-project
@@ -108,7 +108,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_DB: iic2513template_test
+          POSTGRES_DB: cauldron_test
           POSTGRES_PASSWORD: postgres
 
         options: >-
@@ -149,11 +149,11 @@ jobs:
 
     - name: Create project
       working-directory: ../
-      run: yo @iic2513/template my-project --installDependencies
+      run: yo cauldron my-project --installDependencies
 
     - name: Create model
       working-directory: ../my-project
-      run: yo @iic2513/template:model user name:string,email:string --create
+      run: yo cauldron:model user name:string,email:string --create
 
     - name: Run migration
       working-directory: ../my-project

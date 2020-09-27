@@ -1,11 +1,11 @@
 {
-  "name": "@iic2513/generator-template",
+  "name": "generator-cauldron",
   "version": "0.0.0-development",
-  "description": "Project template generator for IIC2513 course at Pontificia Universidad Catolica de Chile",
+  "description": "Javascript web projects template generator for educational purposes",
   "license": "MIT",
   "author": {
     "name": "Gabriel Vidal",
-    "email": "gpvidal@uc.cl"
+    "email": "gabrielvidals@gmail.com"
   },
   "scripts": {
     "lint": "eslint ./generators ./helpers",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IIC2513/generator-template"
+    "url": "https://github.com/gpvidal/generator-cauldron"
   },
   "files": [
     "generators",
