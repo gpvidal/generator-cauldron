@@ -1,6 +1,6 @@
 # Template
 
-Template built with [koa](http://koajs.com/) for IIC2513 - Tecnologías y Aplicaciones Web, Pontificia Universidad Católica de Chile.
+Template built with [koa](http://koajs.com/).
 
 ## Prerequisites:
 * PostgreSQL
@@ -24,7 +24,7 @@ Template built with [koa](http://koajs.com/) for IIC2513 - Tecnologías y Aplica
 ### Create development database
 
 ```sh
-createdb iic2513template_dev
+createdb cauldron_dev
 ```
 
 ### Run migrations
