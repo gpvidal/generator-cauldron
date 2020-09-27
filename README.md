@@ -1,6 +1,6 @@
 # Cauldron generator
 
-![build](https://github.com/gpvidal/generator-cauldron/workflows/build/badge.svg)
+![Build and test package](https://github.com/gpvidal/generator-cauldron/workflows/Build%20and%20test%20package/badge.svg)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm-version](https://img.shields.io/npm/v/generator-cauldron?logo=npm)](https://www.npmjs.com/package/generator-cauldron)
 
