@@ -12,7 +12,7 @@ This version was based on this [repository](https://github.com/IIC2513/generator
 
 To run this generator (based on [Yeoman](https://yeoman.io/)):
 
-* NodeJS LTS (10.x or 12.x)
+* NodeJS LTS (12.x or 14.x)
 * Yarn
 * Yeoman:
 
