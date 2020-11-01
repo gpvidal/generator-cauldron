@@ -5,7 +5,7 @@ Template built with [koa](http://koajs.com/).
 ## Prerequisites:
 * PostgreSQL
   * you will need a database with name and user/password as configured in `src/config/database.js`
-* Node.js LTS (10.x or 12.x)
+* Node.js LTS (12.x or 14.x)
 * [Yarn](https://yarnpkg.com)
 
 ## Project Setup
