@@ -44,7 +44,7 @@
     "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
-    "core-js": "^3.9.1",
+    "core-js": "^3.11.1",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
     "koa-ejs": "^4.3.0",
